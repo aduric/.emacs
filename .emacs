@@ -30,11 +30,16 @@
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
+(setq org-log-done t)
+(setq org-directory "~/Dropbox/org")
+(setq org-agenda-files (list "~/Dropbox/org/work.org" 
+                             "~/Dropbox/org/home.org"
+			     "~/Dropbox/org/fitness.org"))
 
 (add-hook 'org-mode-hook 'turn-on-font-lock)
 
-(require 'dired+)
-(toggle-dired-find-file-reuse-dir 1)
+;(require 'dired+)
+;(toggle-dired-find-file-reuse-dir 1)
 
 (delete-selection-mode t)
 
@@ -137,3 +142,18 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  )
+
+
+;;; This was installed by package-install.el.
+;;; This provides support for the package system and
+;;; interfacing with ELPA, the package archive.
+;;; Move this code earlier if you want to reference
+;;; packages in your .emacs.
+(when
+    (load
+     (expand-file-name "~/.emacs.d/elpa/package.el"))
+  (package-initialize))
+
+
+;; nXHTML mode
+(load "~/.emacs.d/nxhtml/autostart")
